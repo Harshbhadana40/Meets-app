@@ -13,7 +13,11 @@ const MainNavigation = () => {
   };
   const UserID = null;
   setTimeout(() => {
-    setUserID(userctx.currentUser?.email);
+    if (userctx.currentUser?.email) {
+      setUserID(userctx.currentUser?.email);
+    } else {
+      setUserID(userctx.currentUser?.phoneNumber);
+    }
   }, 1);
 
   return (

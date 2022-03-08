@@ -25,7 +25,7 @@ export function UserContextProvider(props) {
   useEffect(() => {
     onAuthStateChanged(auth, (currentUser) => {
       setUser(currentUser);
-      
+      console.log(currentUser);
     });
   }, []);
 
@@ -55,7 +55,7 @@ export function UserContextProvider(props) {
       setUserState(true);
     } catch (error) {
       setError(error.message);
-      console.log(error.message)
+      console.log(error.message);
     }
 
     console.log(user);
