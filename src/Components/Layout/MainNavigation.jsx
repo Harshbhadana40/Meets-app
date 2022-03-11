@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import classes from "./MainNavigation.module.css";
 import { userContext } from "../Store/UserAuthContext";
@@ -7,11 +7,11 @@ import { userContext } from "../Store/UserAuthContext";
 const MainNavigation = () => {
   const [userID, setUserID] = useState("");
   const userctx = useContext(userContext);
-  const Navigate = useNavigate();
+
   const logouthandler = () => {
     userctx.logout();
   };
-  const UserID = null;
+
   setTimeout(() => {
     if (userctx.currentUser?.email) {
       setUserID(userctx.currentUser?.email);
